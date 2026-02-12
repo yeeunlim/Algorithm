@@ -1,8 +1,11 @@
-name: LeetHub Setting
+name: LeetHub Organizer
 
 on:
   push:
     branches: ["main"]
+    # 워크플로 파일 수정 커밋은 무시(불필요한 재실행 방지)
+    paths-ignore:
+      - ".github/workflows/**"
 
 permissions:
   contents: write
@@ -20,6 +23,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
         with:
+          # diff/로그 비교 때문에 전체 히스토리 가져오는 게 안전
           fetch-depth: 0
 
       - name: Check if LeetHub Commit
@@ -28,14 +32,15 @@ jobs:
           COMMIT_MSG=$(git log -1 --pretty=%B | tail -n 1 | tr -d '\r')
           echo "Latest commit message: $COMMIT_MSG"
 
+          # 사용자가 제공한 포맷: Time: ... - LeetHub
           if [[ "$COMMIT_MSG" == Time:* && "$COMMIT_MSG" == *"- LeetHub" ]]; then
             echo "should_run=true" >> $GITHUB_OUTPUT
             echo "commit_msg=${COMMIT_MSG}" >> $GITHUB_OUTPUT
-            echo "LeetHub 커밋 확인 ✅"
+            echo "LeetHub commit detected ✅"
           else
             echo "should_run=false" >> $GITHUB_OUTPUT
             echo "commit_msg=" >> $GITHUB_OUTPUT
-            echo "작업 패스 ❌"
+            echo "Not a LeetHub commit. Skip ❌"
           fi
 
       - name: Detect New Solve Package
@@ -47,6 +52,7 @@ jobs:
           BEFORE="${{ github.event.before }}"
           AFTER="${{ github.sha }}"
 
+          # 최초 push 등 before가 0...이면 직전 커밋으로 대체
           if [[ "$BEFORE" == "0000000000000000000000000000000000000000" ]]; then
             BEFORE="$(git rev-parse HEAD~1)"
           fi
@@ -63,7 +69,7 @@ jobs:
             done
 
             if [[ "$SKIP" == false ]]; then
-              echo "새로운 문제: $DIR"
+              echo "New package detected: $DIR"
               echo "package_name=$DIR" >> $GITHUB_OUTPUT
               break
             fi
@@ -77,7 +83,7 @@ jobs:
           README_PATH="$PACKAGE_NAME/README.md"
 
           if [ ! -f "$README_PATH" ]; then
-            echo "README.md 없음 ❌"
+            echo "README.md not found -> level=Unknown"
             echo "leetcode_level=Unknown" >> $GITHUB_OUTPUT
             exit 0
           fi
@@ -88,12 +94,13 @@ jobs:
             LEVEL="Unknown"
           fi
 
-          echo "난이도: $LEVEL"
+          echo "Detected level: $LEVEL"
           echo "leetcode_level=$LEVEL" >> $GITHUB_OUTPUT
 
   move:
     needs: detect
-    if: ${{ needs.detect.outputs.should_run == 'true' && needs.detect.outputs.package_name != '' }}
+    # github-actions[bot]가 만든 커밋은 다시 처리하지 않음(무한 루프 방지)
+    if: ${{ github.actor != 'github-actions[bot]' && needs.detect.outputs.should_run == 'true' && needs.detect.outputs.package_name != '' }}
     runs-on: ubuntu-latest
 
     steps:
@@ -101,6 +108,7 @@ jobs:
         uses: actions/checkout@v3
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
+          ref: main
           fetch-depth: 0
 
       - name: Move Directory
@@ -109,33 +117,37 @@ jobs:
           LEVEL_DIRECTORY="${{ needs.detect.outputs.level }}"
           ROOT_DIR="LeetCode"
 
-          echo "이동할 폴더: $PACKAGE_NAME"
-          echo "난이도: $LEVEL_DIRECTORY"
+          echo "Package: $PACKAGE_NAME"
+          echo "Level: $LEVEL_DIRECTORY"
 
           if [ -z "$PACKAGE_NAME" ]; then
-            echo "PACKAGE_NAME is empty. Outputs 매핑을 확인하세요."
+            echo "PACKAGE_NAME is empty. Abort."
             exit 1
           fi
 
           mkdir -p "$ROOT_DIR"
 
+          # 이미 같은 문제 폴더가 (난이도 폴더 아래) 존재하는지 탐색
           FOUND_EXISTING_PATH=""
           for dir in "$ROOT_DIR"/*; do
             if [ -d "$dir/$PACKAGE_NAME" ]; then
               FOUND_EXISTING_PATH="$dir"
-              echo "기존 폴더 발견: $dir/$PACKAGE_NAME"
+              echo "Existing package found: $dir/$PACKAGE_NAME"
               break
             fi
           done
 
+          # 기존 폴더가 있으면 병합 이동
           if [ -n "$FOUND_EXISTING_PATH" ]; then
             DEST="$FOUND_EXISTING_PATH/$PACKAGE_NAME"
-            echo "→ 기존 폴더로 병합: $DEST"
+            echo "→ Merge into existing: $DEST"
             mv "$PACKAGE_NAME"/* "$DEST"/
             rmdir "$PACKAGE_NAME" || true
+
+          # 없으면 새로 난이도 폴더 아래로 이동
           else
             DEST="$ROOT_DIR/$LEVEL_DIRECTORY/$PACKAGE_NAME"
-            echo "→ 새 폴더 생성: $DEST"
+            echo "→ Move to new: $DEST"
             mkdir -p "$ROOT_DIR/$LEVEL_DIRECTORY"
             mv "$PACKAGE_NAME" "$ROOT_DIR/$LEVEL_DIRECTORY/"
           fi
@@ -143,11 +155,16 @@ jobs:
       - name: Commit and Push
         run: |
           COMMIT_MSG="${{ needs.detect.outputs.commit_msg }}"
-          echo "커밋 메시지: $COMMIT_MSG"
+          echo "Commit message: $COMMIT_MSG"
 
           git config --global user.name "yeeunlim"
           git config --global user.email "flattgreen9@gmail.com"
 
           git add .
           git commit -m "$COMMIT_MSG" || echo "No changes to commit"
-          git push
+
+          # 원격 main이 더 앞서서 push 거절(non-fast-forward)되는 문제 해결
+          git fetch origin main
+          git pull --rebase origin main
+
+          git push origin HEAD:main
