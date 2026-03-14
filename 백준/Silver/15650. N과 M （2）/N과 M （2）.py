@@ -1,18 +1,18 @@
 import sys
 
-n, m = map(int, input().split())
+n, m = map(int, sys.stdin.readline().split())
+s = []
 
-array = []  # 현재까지 선택된 요소들을 저장하는 리스트
-def backtracking(start):
-    if len(array) == m:  # 현재까지 선택된 요소의 개수가 m과 같다면
-        print(" ".join(map(str, array)))  # 현재 순열을 출력
-        return  # 함수를 종료하고 돌아감
+def dfs(start):
+    if len(s) == m:
+        print(' '.join(map(str, s)))
+        return
 
-    for i in range(start, n + 1):  # 1부터 n까지 모든 숫자에 대해
-        if i not in array:  # 현재 선택된 숫자들(array)에 포함되지 않은 숫자 i를 선택
-            array.append(i)  # 숫자 i를 선택 (추가)
-            backtracking(i+1)  # 현재보다 큰 수 선택(i+1)
-            array.pop()  # 선택했던 숫자 i를 제거 (백트래킹)
+    # 1부터가 아니라 start부터 시작함으로써 이전 숫자보다 큰 것만 선택함
+    for i in range(start, n + 1):
+        if i not in s:
+            s.append(i)
+            dfs(i + 1)  # 현재 숫자 i보다 1 큰 숫자부터 뽑도록 전달
+            s.pop()
 
-
-backtracking(1)
+dfs(1)
