@@ -18,18 +18,10 @@ def solve():
         g[i] = g[i-1] + f[i]
 
     # 테스트 케이스 처리
-    input_data = sys.stdin.read().split()
+    input = sys.stdin.readline
+    t = int(input())
+    for _ in range(t):
+        n = int(input())
+        print(g[n])
 
-    t = int(input_data[0])
-    queries = input_data[1:]
-    
-    # 결과를 리스트에 모아서 한 번에 출력
-    answers = []
-    for i in range(t):
-        n = int(queries[i])
-        answers.append(str(g[n]))
-    
-    sys.stdout.write('\n'.join(answers) + '\n')
-
-if __name__ == '__main__':
-    solve()
+solve()
