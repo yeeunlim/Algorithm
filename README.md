@@ -9,6 +9,7 @@ This is an auto push repository for Baekjoon Online Judge created with [Baekjoon
 | [0001-two-sum](https://github.com/yeeunlim/Algorithm/tree/master/0001-two-sum) |
 | [0014-longest-common-prefix](https://github.com/yeeunlim/Algorithm/tree/master/0014-longest-common-prefix) |
 | [0121-best-time-to-buy-and-sell-stock](https://github.com/yeeunlim/Algorithm/tree/master/0121-best-time-to-buy-and-sell-stock) |
+| [0238-product-of-array-except-self](https://github.com/yeeunlim/Algorithm/tree/master/0238-product-of-array-except-self) |
 ## Hash Table
 |  |
 | ------- |
@@ -25,4 +26,8 @@ This is an auto push repository for Baekjoon Online Judge created with [Baekjoon
 |  |
 | ------- |
 | [0121-best-time-to-buy-and-sell-stock](https://github.com/yeeunlim/Algorithm/tree/master/0121-best-time-to-buy-and-sell-stock) |
+## Prefix Sum
+|  |
+| ------- |
+| [0238-product-of-array-except-self](https://github.com/yeeunlim/Algorithm/tree/master/0238-product-of-array-except-self) |
 <!---LeetCode Topics End-->
