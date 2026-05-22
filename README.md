@@ -46,11 +46,13 @@ This is an auto push repository for Baekjoon Online Judge created with [Baekjoon
 ## Tree
 |  |
 | ------- |
+| [0098-validate-binary-search-tree](https://github.com/yeeunlim/Algorithm/tree/master/0098-validate-binary-search-tree) |
 | [0124-binary-tree-maximum-path-sum](https://github.com/yeeunlim/Algorithm/tree/master/0124-binary-tree-maximum-path-sum) |
 | [0572-subtree-of-another-tree](https://github.com/yeeunlim/Algorithm/tree/master/0572-subtree-of-another-tree) |
 ## Depth-First Search
 |  |
 | ------- |
+| [0098-validate-binary-search-tree](https://github.com/yeeunlim/Algorithm/tree/master/0098-validate-binary-search-tree) |
 | [0124-binary-tree-maximum-path-sum](https://github.com/yeeunlim/Algorithm/tree/master/0124-binary-tree-maximum-path-sum) |
 | [0572-subtree-of-another-tree](https://github.com/yeeunlim/Algorithm/tree/master/0572-subtree-of-another-tree) |
 ## String Matching
@@ -60,10 +62,15 @@ This is an auto push repository for Baekjoon Online Judge created with [Baekjoon
 ## Binary Tree
 |  |
 | ------- |
+| [0098-validate-binary-search-tree](https://github.com/yeeunlim/Algorithm/tree/master/0098-validate-binary-search-tree) |
 | [0124-binary-tree-maximum-path-sum](https://github.com/yeeunlim/Algorithm/tree/master/0124-binary-tree-maximum-path-sum) |
 | [0572-subtree-of-another-tree](https://github.com/yeeunlim/Algorithm/tree/master/0572-subtree-of-another-tree) |
 ## Hash Function
 |  |
 | ------- |
 | [0572-subtree-of-another-tree](https://github.com/yeeunlim/Algorithm/tree/master/0572-subtree-of-another-tree) |
+## Binary Search Tree
+|  |
+| ------- |
+| [0098-validate-binary-search-tree](https://github.com/yeeunlim/Algorithm/tree/master/0098-validate-binary-search-tree) |
 <!---LeetCode Topics End-->
