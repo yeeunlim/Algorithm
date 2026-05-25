@@ -16,6 +16,7 @@ This is an auto push repository for Baekjoon Online Judge created with [Baekjoon
 |  |
 | ------- |
 | [0001-two-sum](https://github.com/yeeunlim/Algorithm/tree/master/0001-two-sum) |
+| [0146-lru-cache](https://github.com/yeeunlim/Algorithm/tree/master/0146-lru-cache) |
 | [0560-subarray-sum-equals-k](https://github.com/yeeunlim/Algorithm/tree/master/0560-subarray-sum-equals-k) |
 ## String
 |  |
@@ -73,4 +74,16 @@ This is an auto push repository for Baekjoon Online Judge created with [Baekjoon
 |  |
 | ------- |
 | [0098-validate-binary-search-tree](https://github.com/yeeunlim/Algorithm/tree/master/0098-validate-binary-search-tree) |
+## Linked List
+|  |
+| ------- |
+| [0146-lru-cache](https://github.com/yeeunlim/Algorithm/tree/master/0146-lru-cache) |
+## Design
+|  |
+| ------- |
+| [0146-lru-cache](https://github.com/yeeunlim/Algorithm/tree/master/0146-lru-cache) |
+## Doubly-Linked List
+|  |
+| ------- |
+| [0146-lru-cache](https://github.com/yeeunlim/Algorithm/tree/master/0146-lru-cache) |
 <!---LeetCode Topics End-->
