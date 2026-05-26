@@ -12,6 +12,7 @@ This is an auto push repository for Baekjoon Online Judge created with [Baekjoon
 | [0121-best-time-to-buy-and-sell-stock](https://github.com/yeeunlim/Algorithm/tree/master/0121-best-time-to-buy-and-sell-stock) |
 | [0238-product-of-array-except-self](https://github.com/yeeunlim/Algorithm/tree/master/0238-product-of-array-except-self) |
 | [0560-subarray-sum-equals-k](https://github.com/yeeunlim/Algorithm/tree/master/0560-subarray-sum-equals-k) |
+| [1472-design-browser-history](https://github.com/yeeunlim/Algorithm/tree/master/1472-design-browser-history) |
 ## Hash Table
 |  |
 | ------- |
@@ -80,13 +81,24 @@ This is an auto push repository for Baekjoon Online Judge created with [Baekjoon
 |  |
 | ------- |
 | [0146-lru-cache](https://github.com/yeeunlim/Algorithm/tree/master/0146-lru-cache) |
+| [1472-design-browser-history](https://github.com/yeeunlim/Algorithm/tree/master/1472-design-browser-history) |
 ## Design
 |  |
 | ------- |
 | [0146-lru-cache](https://github.com/yeeunlim/Algorithm/tree/master/0146-lru-cache) |
 | [1396-design-underground-system](https://github.com/yeeunlim/Algorithm/tree/master/1396-design-underground-system) |
+| [1472-design-browser-history](https://github.com/yeeunlim/Algorithm/tree/master/1472-design-browser-history) |
 ## Doubly-Linked List
 |  |
 | ------- |
 | [0146-lru-cache](https://github.com/yeeunlim/Algorithm/tree/master/0146-lru-cache) |
+| [1472-design-browser-history](https://github.com/yeeunlim/Algorithm/tree/master/1472-design-browser-history) |
+## Stack
+|  |
+| ------- |
+| [1472-design-browser-history](https://github.com/yeeunlim/Algorithm/tree/master/1472-design-browser-history) |
+## Data Stream
+|  |
+| ------- |
+| [1472-design-browser-history](https://github.com/yeeunlim/Algorithm/tree/master/1472-design-browser-history) |
 <!---LeetCode Topics End-->
