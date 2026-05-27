@@ -18,6 +18,7 @@ This is an auto push repository for Baekjoon Online Judge created with [Baekjoon
 | ------- |
 | [0001-two-sum](https://github.com/yeeunlim/Algorithm/tree/master/0001-two-sum) |
 | [0146-lru-cache](https://github.com/yeeunlim/Algorithm/tree/master/0146-lru-cache) |
+| [0355-design-twitter](https://github.com/yeeunlim/Algorithm/tree/master/0355-design-twitter) |
 | [0560-subarray-sum-equals-k](https://github.com/yeeunlim/Algorithm/tree/master/0560-subarray-sum-equals-k) |
 | [1396-design-underground-system](https://github.com/yeeunlim/Algorithm/tree/master/1396-design-underground-system) |
 ## String
@@ -81,11 +82,13 @@ This is an auto push repository for Baekjoon Online Judge created with [Baekjoon
 |  |
 | ------- |
 | [0146-lru-cache](https://github.com/yeeunlim/Algorithm/tree/master/0146-lru-cache) |
+| [0355-design-twitter](https://github.com/yeeunlim/Algorithm/tree/master/0355-design-twitter) |
 | [1472-design-browser-history](https://github.com/yeeunlim/Algorithm/tree/master/1472-design-browser-history) |
 ## Design
 |  |
 | ------- |
 | [0146-lru-cache](https://github.com/yeeunlim/Algorithm/tree/master/0146-lru-cache) |
+| [0355-design-twitter](https://github.com/yeeunlim/Algorithm/tree/master/0355-design-twitter) |
 | [1396-design-underground-system](https://github.com/yeeunlim/Algorithm/tree/master/1396-design-underground-system) |
 | [1472-design-browser-history](https://github.com/yeeunlim/Algorithm/tree/master/1472-design-browser-history) |
 ## Doubly-Linked List
@@ -101,4 +104,8 @@ This is an auto push repository for Baekjoon Online Judge created with [Baekjoon
 |  |
 | ------- |
 | [1472-design-browser-history](https://github.com/yeeunlim/Algorithm/tree/master/1472-design-browser-history) |
+## Heap (Priority Queue)
+|  |
+| ------- |
+| [0355-design-twitter](https://github.com/yeeunlim/Algorithm/tree/master/0355-design-twitter) |
 <!---LeetCode Topics End-->
