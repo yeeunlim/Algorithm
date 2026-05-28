@@ -88,6 +88,7 @@ This is an auto push repository for Baekjoon Online Judge created with [Baekjoon
 |  |
 | ------- |
 | [0146-lru-cache](https://github.com/yeeunlim/Algorithm/tree/master/0146-lru-cache) |
+| [0155-min-stack](https://github.com/yeeunlim/Algorithm/tree/master/0155-min-stack) |
 | [0355-design-twitter](https://github.com/yeeunlim/Algorithm/tree/master/0355-design-twitter) |
 | [1396-design-underground-system](https://github.com/yeeunlim/Algorithm/tree/master/1396-design-underground-system) |
 | [1472-design-browser-history](https://github.com/yeeunlim/Algorithm/tree/master/1472-design-browser-history) |
@@ -99,6 +100,7 @@ This is an auto push repository for Baekjoon Online Judge created with [Baekjoon
 ## Stack
 |  |
 | ------- |
+| [0155-min-stack](https://github.com/yeeunlim/Algorithm/tree/master/0155-min-stack) |
 | [1472-design-browser-history](https://github.com/yeeunlim/Algorithm/tree/master/1472-design-browser-history) |
 ## Data Stream
 |  |
